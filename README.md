@@ -19,7 +19,3 @@ Pull requests are welcome. I want to make this more complex
 
 ## License
 [MIT](https://github.com/DreamFireworks/password-generator/blob/main/LICENSE)
-
-<a href="https://www.linkedin.com/in/serhan-eraslan/" target="_blank" align="left">
-  <img src="https://komarev.com/ghpvc/?username=dreamfireworks&label=Profile%20views&color=0e75b6&style=flat" alt="dreamfireworks" />
-</a>
