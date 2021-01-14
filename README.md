@@ -19,3 +19,4 @@ Pull requests are welcome. I want to make this more complex
 
 ## License
 [MIT](https://github.com/DreamFireworks/password-generator/blob/main/LICENSE)
+
