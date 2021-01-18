@@ -2,13 +2,19 @@ import random
 import time
 import os
 from datetime import datetime
+
+from tkinter import *
 path = os.getcwd()
 print('''
 ***********************
 *PASSWORD GENERATOR v1*
 ***********************
 ''')
-chars = 'abcçdefgğhıijklmnopqrsştuüvwxyzABCÇDEFĞGHIİJKLMNOPQRSTUÜVWXYZ0123456789!@£$%^&*().,?/'
+lower = "abcçdefgğhıijklmnopqrsştuüvwxyz"
+upper = "ABCÇDEFĞGHIİJKLMNOPQRSTUÜVWXYZ"
+number = "0123456789"
+symbols = "!@£$%^&*().,?/' "
+
 length = input('Lenght? : ')
 length = int(length)
 print('Password is : ')
