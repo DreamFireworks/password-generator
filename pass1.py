@@ -12,28 +12,6 @@ lower = "abcçdefgğhıijklmnopqrsştuüvwxyzABCÇDEFĞGHIİJKLMNOPQRSTUÜVWXYZ0
 length = input('Lenght? : ')
 length = int(length)
 pass_arr = [0,0,0,0]
-try:
-    lower_ask = input("Lower case? Y or N")
-    if lower_ask != "Y" or lower_ask != "N":
-        raise "input error"
-    if lower_ask == 'Y':
-        pass_arr[0] = 1
-    elif lower_ask == "N":
-        pass_arr[0] = 0
-except:
-    print("Error")
-
-try:
-    lower_ask = input("Upper case? Y or N")
-    if lower_ask != "Y" or lower_ask != "N":
-        raise "input error"
-    if lower_ask == 'Y':
-        pass_arr[1] = 1
-    elif lower_ask == "N":
-        pass_arr[1] = 0
-except:
-    print("Error")
-
 
 print('Password is : ')
 password = ''
