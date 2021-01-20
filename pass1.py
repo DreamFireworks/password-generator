@@ -8,10 +8,7 @@ print('''
 *PASSWORD GENERATOR v1*
 ***********************
 ''')
-lower = "abcçdefgğhıijklmnopqrsştuüvwxyz"
-upper = "ABCÇDEFĞGHIİJKLMNOPQRSTUÜVWXYZ"
-numbers = "0123456789"
-symbols = " !@£$%^&*().,?/' "
+lower = "abcçdefgğhıijklmnopqrsştuüvwxyzABCÇDEFĞGHIİJKLMNOPQRSTUÜVWXYZ0123456789!@£$%^&*().,?/' "
 length = input('Lenght? : ')
 length = int(length)
 pass_arr = [0,0,0,0]
