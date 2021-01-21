@@ -16,7 +16,7 @@ symbols = "!@£$%^&*().,?/' "
 
 
 window = Tk()
-window.geometry("500x200")
+window.geometry("220x300")
 window.title("Password Generator By Serhan Eraslan")
 window.resizable(width=False,
                  height=False)
@@ -68,85 +68,78 @@ def resett():
     choices=""
     password=""
 
-
-
-Checkbutton(window,  variable=upper1).grid(row=3, sticky=W)
-num1 = IntVar()
-Checkbutton(window,  variable=num1).grid(row=4, sticky=W)
-symb1 = IntVar()
-Checkbutton(window,  variable=symb1).grid(row=5, sticky=W)
-Button(window, text='Reset', command=resett).grid(row=8,column=1, sticky=W, pady=4)
-Button(window, text='Quit', command=window.quit).grid(row=8,column=2, sticky=W, pady=4)
-Button(window, text='Generate', command=psw).grid(row=7, sticky=W, pady=4)
-label1 = Label(window,text="Password")
-label1.grid(row=6,sticky=W, pady=4)
-
-window.mainloop()
-
-
 IntroText='''
-***********************
+*******************************
 *PASSWORD GENERATOR v1*
-********Serhan Eraslan*
+***********Serhan Eraslan*****
 '''
 
-Intro = Label(window,Text=IntroText)
+Intro = Label(window,text=IntroText,justify="center",
+            bg="#eeefff",relief="groove")
 Intro.place(x=5,
-            y=0,
-            width=190,
-            height=50,
-            justify="center",
-            bg="#efefef")
+            y=5,
+            width=200,
+            height=50)
             
             
 lower1 = IntVar()
-lower_box = Checkbutton(window, text="Lower Case {abc...z}", variable=lower1)
-lower_box.place(row=2, sticky=W)
+lower_box = Checkbutton(window, text="Lower Case {abc...z}",justify="left")
+lower_box.place(x=5,
+                y=60,
+                height=20)
+
 
 
 upper1 = IntVar()
-upper_box = Checkbutton(window, text="Upper Case {ABC...Z}", variable=lower1)
-upper_box.place(x=60,
-            y=0,
-            width=190,
-            height=20,
-            bg="#efefef")
+upper_box = Checkbutton(window, text="Upper Case {ABC...Z}", variable=lower1,justify="left")
+upper_box.place(x=5,
+                y=85,
+                height=20)
 
 
 
 num1 = IntVar()
-num_box = Checkbutton(window, text="Numbers {0123456789}", variable=lower1)
-num_box.place(x=85,
-            y=0,
-            width=190,
-            height=20,
-            bg="#efefef")
+num_box = Checkbutton(window, text="Numbers {0123456789}", variable=lower1,justify="left")
+num_box.place(x=5,
+              y=110,
+              height=20)
 
 
 
 symb1 = IntVar()
-symbl_box = Checkbutton(window, text="Symbols {!@£$%^&*().,?/'}", variable=lower1)
-symbl_box.place(x=110,
-            y=0,
-            width=190,
-            height=20,
-            bg="#efefef")
+symbl_box = Checkbutton(window, text="Symbols {!@£$%^&*().,?/'}", variable=lower1,justify="left")
+symbl_box.place(x=5,
+                y=130,
+                height=20)
 
 
+generate = Button(window, text='Generate', command=psw,bg="#eeefff")
+generate.place(x=5,
+               y=180,
+               width=100,
+               height=30)
 
 
+reset_button=Button(window, text='Reset', command=resett,bg="#eeefff")
+reset_button.place(x=110,
+                   y=180,
+                   width=30,
+                   height=30)
+
+quit_Button= Button(window, text='Quit', command=window.quit,bg="#eeefff")
+quit_Button.place(x=145,
+                  y=180,
+                  width=50,
+                  height=30)
+
+passw_show = Label(window,text="Password will shown here", bg="#eeefff", relief="groove")
+passw_show.place(x=5,
+                 y=210,
+                 width=190,
+                 height=40)
 
 
-
-
-
-
-
-
-
-
-
-
+window.mainloop()
 
 
 
