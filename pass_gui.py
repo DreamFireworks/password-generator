@@ -46,6 +46,7 @@ def var_states():
 
   
 def psw():
+  passw_show.configure(state="normal")
   var_states()
   global choices
   password=""
@@ -60,8 +61,9 @@ def psw():
   f.write(password)
   f.write("\n")
   f.close()
-  passw_show.delete(0,100)
+  passw_show.delete(1.0,100.0)
   passw_show.insert(1.0,password)
+  passw_show.configure(state="disabled")
   messagebox.showinfo("Done","'pass.txt' has been added to the: " + str(path))
   
 
@@ -70,6 +72,7 @@ def resett():
     global password
     choices=""
     password=""
+    passw_show.insert(1.0,"Password will shown here")
 
 IntroText='''
 *******************************
@@ -141,7 +144,7 @@ passw_show.place(x=5,
                  width=210,
                  height=40)
 passw_show.configure(bg=window.cget('bg'), relief="groove")
-passw_show.configure(state="disabled")
+passw_show.insert(1.0,"Password will shown here")
 
 
 window.mainloop()
