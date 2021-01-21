@@ -16,7 +16,7 @@ symbols = "!@£$%^&*().,?/' "
 
 
 window = Tk()
-#window.geometry("500x200")
+window.geometry("220x260")
 window.title("Password Generator By Serhan Eraslan")
 window.resizable(width=False,
                  height=False)
@@ -60,7 +60,10 @@ def psw():
   f.write(password)
   f.write("\n")
   f.close()
+  passw_show.delete(0,100)
+  passw_show.insert(1.0,password)
   messagebox.showinfo("Done","'pass.txt' has been added to the: " + str(path))
+  
 
 def resett():
     global choices
@@ -68,19 +71,87 @@ def resett():
     choices=""
     password=""
 
-Label(window, text="Password Attributes").grid(row=1, sticky=W)
+IntroText='''
+*******************************
+*PASSWORD GENERATOR v1*
+*************Serhan Eraslan***
+'''
+
+Intro = Label(window,text=IntroText,justify="center",
+            bg="#eeefff",relief="groove")
+Intro.place(x=5,
+            y=5,
+            width=210,
+            height=50)
+            
+            
 lower1 = IntVar()
-Checkbutton(window, text="Lower Case {abc...z}", variable=lower1).grid(row=2, sticky=W)
+lower_box = Checkbutton(window, text="Lower Case {abc...z}",justify="left")
+lower_box.place(x=5,
+                y=60,
+                height=20)
+
+
+
 upper1 = IntVar()
-Checkbutton(window, text="Upper Case {ABC...Z}", variable=upper1).grid(row=3, sticky=W)
+upper_box = Checkbutton(window, text="Upper Case {ABC...Z}", variable=upper1,justify="left")
+upper_box.place(x=5,
+                y=85,
+                height=20)
+
+
+
 num1 = IntVar()
-Checkbutton(window, text="Numbers {0123456789}", variable=num1).grid(row=4, sticky=W)
+num_box = Checkbutton(window, text="Numbers {0123456789}", variable=num1,justify="left")
+num_box.place(x=5,
+              y=110,
+              height=20)
+
+
+
 symb1 = IntVar()
-Checkbutton(window, text="Symbols {!@£$%^&*().,?/'}", variable=symb1).grid(row=5, sticky=W)
-Button(window, text='Reset', command=resett).grid(row=8,column=1, sticky=W, pady=4)
-Button(window, text='Quit', command=window.quit).grid(row=8,column=2, sticky=W, pady=4)
-Button(window, text='Generate', command=psw).grid(row=7, sticky=W, pady=4)
-label1 = Label(window,text="Password")
-label1.grid(row=6,sticky=W, pady=4)
+symbl_box = Checkbutton(window, text="Symbols {!@£$%^&*().,?/'}", variable=symb1,justify="left")
+symbl_box.place(x=5,
+                y=135,
+                height=20)
+
+
+generate = Button(window, text='Generate', command=psw,bg="#eeefff")
+generate.place(x=5,
+               y=170,
+               width=100,
+               height=30)
+
+
+reset_button=Button(window, text='Reset', command=resett,bg="#eeefff")
+reset_button.place(x=110,
+                   y=170,
+                   width=50,
+                   height=30)
+
+quit_Button= Button(window, text='Quit', command=window.quit,bg="#eeefff")
+quit_Button.place(x=165,
+                  y=170,
+                  width=50,
+                  height=30)
+
+passw_show = Text(window)
+passw_show.place(x=5,
+                 y=210,
+                 width=210,
+                 height=40)
+passw_show.configure(bg=window.cget('bg'), relief="groove")
+passw_show.configure(state="disabled")
+
 
 window.mainloop()
+
+
+
+
+
+
+
+
+
+
