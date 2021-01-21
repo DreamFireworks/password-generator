@@ -16,7 +16,7 @@ symbols = "!@£$%^&*().,?/' "
 
 
 window = Tk()
-window.geometry("220x300")
+window.geometry("220x260")
 window.title("Password Generator By Serhan Eraslan")
 window.resizable(width=False,
                  height=False)
@@ -60,7 +60,10 @@ def psw():
   f.write(password)
   f.write("\n")
   f.close()
+  passw_show.delete(0,100)
+  passw_show.insert(1.0,password)
   messagebox.showinfo("Done","'pass.txt' has been added to the: " + str(path))
+  
 
 def resett():
     global choices
@@ -71,14 +74,14 @@ def resett():
 IntroText='''
 *******************************
 *PASSWORD GENERATOR v1*
-***********Serhan Eraslan*****
+*************Serhan Eraslan***
 '''
 
 Intro = Label(window,text=IntroText,justify="center",
             bg="#eeefff",relief="groove")
 Intro.place(x=5,
             y=5,
-            width=200,
+            width=210,
             height=50)
             
             
@@ -91,7 +94,7 @@ lower_box.place(x=5,
 
 
 upper1 = IntVar()
-upper_box = Checkbutton(window, text="Upper Case {ABC...Z}", variable=lower1,justify="left")
+upper_box = Checkbutton(window, text="Upper Case {ABC...Z}", variable=upper1,justify="left")
 upper_box.place(x=5,
                 y=85,
                 height=20)
@@ -99,7 +102,7 @@ upper_box.place(x=5,
 
 
 num1 = IntVar()
-num_box = Checkbutton(window, text="Numbers {0123456789}", variable=lower1,justify="left")
+num_box = Checkbutton(window, text="Numbers {0123456789}", variable=num1,justify="left")
 num_box.place(x=5,
               y=110,
               height=20)
@@ -107,36 +110,38 @@ num_box.place(x=5,
 
 
 symb1 = IntVar()
-symbl_box = Checkbutton(window, text="Symbols {!@£$%^&*().,?/'}", variable=lower1,justify="left")
+symbl_box = Checkbutton(window, text="Symbols {!@£$%^&*().,?/'}", variable=symb1,justify="left")
 symbl_box.place(x=5,
-                y=130,
+                y=135,
                 height=20)
 
 
 generate = Button(window, text='Generate', command=psw,bg="#eeefff")
 generate.place(x=5,
-               y=180,
+               y=170,
                width=100,
                height=30)
 
 
 reset_button=Button(window, text='Reset', command=resett,bg="#eeefff")
 reset_button.place(x=110,
-                   y=180,
-                   width=30,
+                   y=170,
+                   width=50,
                    height=30)
 
 quit_Button= Button(window, text='Quit', command=window.quit,bg="#eeefff")
-quit_Button.place(x=145,
-                  y=180,
+quit_Button.place(x=165,
+                  y=170,
                   width=50,
                   height=30)
 
-passw_show = Label(window,text="Password will shown here", bg="#eeefff", relief="groove")
+passw_show = Text(window)
 passw_show.place(x=5,
                  y=210,
-                 width=190,
+                 width=210,
                  height=40)
+passw_show.configure(bg=window.cget('bg'), relief="groove")
+passw_show.configure(state="disabled")
 
 
 window.mainloop()
