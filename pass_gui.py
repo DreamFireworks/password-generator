@@ -162,13 +162,3 @@ passw_show.insert(1.0,"Password will shown here")
 
 
 window.mainloop()
-
-
-
-
-
-
-
-
-
-
