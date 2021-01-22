@@ -74,6 +74,13 @@ def resett():
     password=""
     passw_show.insert(1.0,"Password will shown here")
 
+
+def closep():
+    messagebox.showinfo("Bye!","Thanks for Using Password Generator, See ya!")
+    time.sleep(1)
+    window.destroy()
+
+
 IntroText='''
 *******************************
 *PASSWORD GENERATOR v1*
@@ -146,7 +153,7 @@ reset_button.place(x=110,
                    width=50,
                    height=30)
 
-quit_Button= Button(window, text='Quit', command=window.quit,bg="#eeefff")
+quit_Button= Button(window, text='Quit', command=closep,bg="#eeefff")
 quit_Button.place(x=165,
                   y=185,
                   width=50,
@@ -162,13 +169,3 @@ passw_show.insert(1.0,"Password will shown here")
 
 
 window.mainloop()
-
-
-
-
-
-
-
-
-
-
