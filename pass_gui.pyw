@@ -1,5 +1,3 @@
-import keyboard
-import pyautogui 
 import random
 import time
 import os
@@ -40,7 +38,7 @@ def var_states():
    if(res[3] == 1):
     choices = choices + symbols
     choices="".join(choices)
-   if(res == [0,0,0,0]):
+   else:
     choices = choices + lower
     choices="".join(choices)
 
@@ -65,6 +63,7 @@ def psw():
   passw_show.insert(1.0,password)
   passw_show.configure(state="disabled")
   messagebox.showinfo("Done","'pass.txt' has been added to the: " + str(path))
+  resett()
   
 
 def resett():
