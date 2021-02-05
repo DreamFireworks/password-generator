@@ -63,6 +63,7 @@ def psw():
   passw_show.insert(1.0,password)
   passw_show.configure(state="disabled")
   messagebox.showinfo("Done","'pass.txt' has been added to the: " + str(path))
+  resett()
   
 
 def resett():
