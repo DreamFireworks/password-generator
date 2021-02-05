@@ -38,7 +38,7 @@ def var_states():
    if(res[3] == 1):
     choices = choices + symbols
     choices="".join(choices)
-   if(res == [0,0,0,0]):
+   else:
     choices = choices + lower
     choices="".join(choices)
 
